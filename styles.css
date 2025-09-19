@@ -1,0 +1,218 @@
+
+
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #f5e1c0;
+    background-image: radial-gradient(#9c7a4d 1px, transparent 1px);
+    background-size: 20px 20px;
+
+    }
+
+
+/* Header Section */
+header {
+    background-color: #ffffff; /* White background for the header */
+    color: #333; /* Dark text */
+    padding: 20px 30px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #9c7a4d; /* Light brown color for logo */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+nav ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 8px 12px;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #9c7a4d;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Menu hidden by default */
+nav {
+  max-height: 0;             /* collapsed */
+  overflow: hidden;          /* hides items */
+  opacity: 0;                /* invisible */
+  transition: max-height 0.5s ease, opacity 0.5s ease; /* smooth */
+}
+
+/* When hovering over header → open menu */
+header:hover nav {
+  max-height: 100px; /* enough to fit items */
+  opacity: 1;        /* fade in */
+}
+
+/* Menu styling */
+nav ul {
+  list-style-type: none;
+  padding: 10px;
+  margin: 15px 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+
+  display: flex;              /* put items in a row */
+  justify-content: center;    /* center them evenly */
+  gap: 20px;                  /* spacing between items */
+}
+
+nav ul li {
+  display: inline; /* keep inline layout */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+  padding: 8px 12px;
+}
+
+nav ul li a:hover {
+  color: #9c7a4d;
+}
+
+/* Hover effect for menu items */
+/* Navigation links */
+nav ul li a {
+    color: #333; /* Dark brown color for links */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect: wiggle + color change */
+nav ul li a:hover {
+    color: #9c7a4d; /* Light brown hover effect */
+    animation: wiggle 0.4s ease; /* Wiggle effect */
+}
+
+
+/* Wiggle Animation */
+@keyframes wiggle {
+    0%   { transform: rotate(0deg); }
+    25%  { transform: rotate(3deg); }
+    50%  { transform: rotate(-3deg); }
+    75%  { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Content Section */
+.content {
+    padding: 30px;
+    background-color: #ffffff; /* White background for content */
+    margin: 20px auto;
+    border-radius: 8px;
+    max-width: 1000px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Default shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+/* Pop-up effect on hover */
+.content:hover {
+    transform: scale(1.03); /* Slight zoom */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Darker, deeper shadow */
+}
+
+
+.content h2 {
+    color: #9c7a4d; /* Light brown color for headings */
+    margin-bottom: 20px;
+}
+
+.content p, .content ul {
+    color: #444; /* Soft dark gray for content text */
+}
+
+ul {
+    padding-left: 20px;
+}
+
+/* Footer Section */
+footer {
+    background-color: #ffffff; /* White background for footer */
+    color: #333; /* Dark text */
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for footer */
+}
+
+/* Button Styling */
+button {
+  background-color: #9c7a4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(156,122,77,0.5);
+}
+
+button:hover {
+  background-color: #b76e79;
+  box-shadow: 0 0 20px rgba(183,110,121,0.9);
+}
+
+#topBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #9c7a4d;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  display: none;
+  cursor: pointer;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    header .logo h1 {
+        font-size: 2em;
+    }
+}
